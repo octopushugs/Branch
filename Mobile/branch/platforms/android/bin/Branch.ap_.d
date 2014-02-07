@@ -1,0 +1,26 @@
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\Branch.ap_ \
+ : C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\drawable\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\drawable-hdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\drawable-ldpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\drawable-mdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\drawable-xhdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\values\strings.xml \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\res\xml\config.xml \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\res\drawable\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\res\drawable-hdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\res\drawable-ldpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\res\drawable-mdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\res\drawable-xhdpi\icon.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\config.xml \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\cordova.js \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\cordova_plugins.js \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\css \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\img \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\index.html \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\js \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\phonegap.js \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\css\index.css \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\img\logo.png \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\js\index.js \
+C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\bin\AndroidManifest.xml \
