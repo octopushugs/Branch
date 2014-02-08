@@ -36,6 +36,10 @@
 	color:#999;
 }
 
+.small-text {
+	font-size:0.9em;
+}
+
 .small-white-text {
 	font-size:0.9em;
 	color:#FFF;
@@ -51,8 +55,12 @@
 	font-size:1.1em;
 }
 
-.ui-overlay-branch {
+.ui-overlay-branch, .ui-bar-branch {
 	background-color:#356aa0;
+}
+
+.ui-bar-branch {
+	color:#FFF;
 }
 
 .branch-input {
@@ -63,6 +71,22 @@
 	-webkit-border-radius:5px;
 	text-indent:10px;
 	padding:0.5em 0;
+}
+
+.doubleline-box {
+	padding:0.7em 0.5em 0.7em 0.5em;
+	overflow:hidden;
+	border-bottom:#DDD 1px solid;
+}
+
+.doubleline-column-one {
+	width:10%;
+	float:left;
+}
+
+.doubleline-column-two {
+	width:85%;
+	float:right;
 }
 
 /*Event List*/
@@ -77,5 +101,30 @@
 	width:70%;
 	float:right;
 	padding:10px;
+}
+
+/*Groups*/
+
+.groups-tile {
+	width:45%;
+	border:#CCC 1px solid;
+	float:left;
+	background-color:#FFF;
+	margin:2%;
+}
+
+.groups-tile-image {
+	color:#FFF;
+	height:100px;
+	padding:3px;
+	text-shadow: 2px 2px 3px rgba(0,0,0,1);
+}
+
+.groups-tile-meta {
+	padding:4px;
+}
+
+#groups {
+	background-color:#EBEBEB;
 }
 
