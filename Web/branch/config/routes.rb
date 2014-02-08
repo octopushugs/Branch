@@ -1,4 +1,14 @@
 Branch::Application.routes.draw do
+
+root 'org#org'
+resources :orgs
+
+namespace :api do 
+	namespace :v1, :defaults => {:format => 'json'} do
+	#	resource blah blah
+
+	end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
