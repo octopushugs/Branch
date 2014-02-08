@@ -26,7 +26,7 @@ module Api
 				student.zipcode = params[:zipcode]
 
 				student.save
-
+				render :text => "ok"
 			end
 		
 			private
