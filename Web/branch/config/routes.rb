@@ -1,6 +1,6 @@
 Branch::Application.routes.draw do
 
-root :to => 'home#index'
+#root :to => '#index'
 
 namespace :api do 
 	namespace :v1, :defaults => {:format => 'json'} do
