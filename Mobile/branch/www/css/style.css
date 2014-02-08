@@ -61,6 +61,11 @@
 
 .ui-bar-branch {
 	color:#FFF;
+	height:60px;
+}
+
+.ui-content {
+	margin-bottom:40px;
 }
 
 .branch-input {
@@ -126,5 +131,39 @@
 
 #groups {
 	background-color:#EBEBEB;
+}
+
+/*Specific Group Page*/
+
+#specific-group-event-container {
+	display:none;
+}
+
+#specific-group-banner {
+	height:120px;
+	position:relative;
+}
+
+#specific-group-banner-title {
+	position:absolute;
+	bottom:1em;
+	right:1em;
+	font-weight:bold;
+	font-size:1.3em;
+	color:#FFF;
+	text-align:right;
+	text-shadow: 2px 2px 3px rgba(0,0,0,1);
+}
+
+/*Feed Page*/
+
+#feed-null {
+	margin-top:30%;
+	text-align:center;
+	font-size:1.4em;
+}
+
+#feed-null a {
+	text-decoration:none;
 }
 

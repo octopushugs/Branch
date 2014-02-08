@@ -25,6 +25,61 @@
 </div>-->
 <!--/Template Page-->
 
+<!--Feed Page-->
+<div data-role="page" id="feed">
+	<div data-role="header" data-theme="branch">
+    	<h1>Branch</h1>
+    </div>
+    <div data-role="content">
+    
+    	<div id="feed-null">
+        	<div>
+            	Nothing to show yet.
+            </div>
+            <div>
+            	<a href="#groups" data-transition="slide">Join some groups!</a>
+            </div>
+        </div>
+    
+    	<!--Event Title-->
+        <div class="modbox hide">
+        	<strong>Friday, Feb 7</strong>
+        </div>
+        <!--/Event Title-->
+        
+        <!--One Event-->
+        <div class="container hide">
+        	<div class="event-list-column-one small-gray-text">
+            	8:30 PM
+            </div>
+            <div class="event-list-column-two">
+            	<div class="small-gray-text">
+                	Foundation for Sustainable Development
+                </div>
+                <div class="margin-top-10 medium-title">
+                	Soccer in Alamo Square with the Boys and Girls Club
+                </div>
+                <div class="margin-top-10 small-gray-text">
+                	20 Attendees
+                </div>
+            </div>
+        </div>
+        <!--/One Event-->
+        
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#feed" data-icon="home">Feed</a></li>
+                <li><a href="#event-list" data-icon="location">Events</a></li>
+                <li><a href="#groups" data-icon="grid">Groups</a></li>
+                <li><a href="#profile" data-icon="user">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Feed Page-->
+
 <!--Event List Page-->
 <div data-role="page" id="event-list">
 	<div data-role="header" data-theme="branch">
@@ -151,7 +206,7 @@
             	<a id="login-submit" data-role="button" data-theme="b">Login</a>
             </div>
             <div class="margin-top-10 txt-center">
-            	<a href="#" class="white-link">Signup Here</a>
+            	<a href="#kid-signup1" class="white-link">Signup Here</a>
             </div>
         </div>
     </div>
@@ -172,13 +227,13 @@
             	<input id="signup-username" type="text" class="branch-input" data-role="none" placeholder="Username" />
             </div>
             <div class="margin-top-10">
-            	<input id="login-password" type="password" class="branch-input" data-role="none" placeholder="Password" />
+            	<input id="signup-password1" type="password" class="branch-input" data-role="none" placeholder="Password" />
             </div>
             <div class="margin-top-10">
-            	<input id="login-password" type="password" class="branch-input" data-role="none" placeholder="Confirm Password" />
+            	<input id="signup-password2" type="password" class="branch-input" data-role="none" placeholder="Confirm Password" />
             </div>
             <div class="margin-top-20">
-            	<a id="login-submit" data-role="button" data-theme="b">Next</a>
+            	<a id="signup-button1" data-role="button" data-theme="b">Next</a>
             </div>
         </div>
     </div>
@@ -196,14 +251,18 @@
             	<input id="signup-zipcode" type="tel" class="branch-input" data-role="none" placeholder="Zipcode" />
             </div>
             <div class="margin-top-10">
-            	<input id="signup-username" type="tel" class="branch-input" data-role="none" placeholder="Phone" />
+            	<input id="signup-phone" type="tel" class="branch-input" data-role="none" placeholder="Phone" />
+            </div>
+            <div class="margin-top-10">
+            	<input id="signup-email" type="email" class="branch-input" data-role="none" placeholder="Email (Optional)" />
             </div>
             <div class="small-white-text margin-top-20">
                 Birthday
             </div>
             <div class="ui-grid-b">
             	<div class="ui-block-a">
-                	<select data-theme="a">
+                	<select id="signup-bday-month" data-theme="a">
+                    	<option value="">Mon</option>
                     	<option value="01">Jan</option>
                         <option value="02">Feb</option>
                         <option value="03">Mar</option>
@@ -219,7 +278,8 @@
                     </select>
                 </div>
                 <div class="ui-block-b">
-                	<select data-theme="a">
+                	<select id="signup-bday-day" data-theme="a">
+                    	<option value="">Day</option>
                     	<option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -254,7 +314,8 @@
                     </select>
                 </div>
                 <div class="ui-block-c">
-                	<select data-theme="a">
+                	<select id="signup-bday-year" data-theme="a">
+                    	<option value="">Yr</option>
                     	<option value="2008">2008</option>
                         <option value="2007">2007</option>
                         <option value="2006">2006</option>
@@ -273,7 +334,7 @@
                 </div>
             </div>
             <div class="margin-top-20">
-            	<a id="login-submit" data-role="button" data-theme="b">Finish</a>
+            	<a id="signup-button2" data-role="button" data-theme="b">Finish</a>
             </div>
         </div>
     </div>
@@ -281,7 +342,7 @@
 <!--/Kid Signup Page 2-->
 
 <!--Specific Event Page-->
-<div data-role="page" id="specific">
+<div data-role="page" id="specific-event">
 	<div data-role="header" data-theme="branch">
     	<h1>Branch</h1>
     </div>
@@ -368,8 +429,38 @@
             	<li><a href="#" data-icon="check">My Groups</a></li>
             </ul>
         </div>
-        <div class="container margin-top-20">
+        <div class="container">
         	<!--One Group Tile-->
+        	<div class="groups-tile">
+            	<div class="groups-tile-image" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
+                	Boys and Girls Club SF
+                </div>
+                <div class="groups-tile-meta">
+                	<div class="margin-top-10 small-text">
+                    	40 Members
+                    </div>
+                    <div class="small-gray-text">
+                    	Next Event: February 15, 2014
+                    </div>
+                </div>
+            </div>
+            <!--/One Group Tile-->
+            <!--One Group Tile-->
+        	<div class="groups-tile">
+            	<div class="groups-tile-image" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
+                	Boys and Girls Club SF
+                </div>
+                <div class="groups-tile-meta">
+                	<div class="margin-top-10 small-text">
+                    	40 Members
+                    </div>
+                    <div class="small-gray-text">
+                    	Next Event: February 15, 2014
+                    </div>
+                </div>
+            </div>
+            <!--/One Group Tile-->
+            <!--One Group Tile-->
         	<div class="groups-tile">
             	<div class="groups-tile-image" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
                 	Boys and Girls Club SF
@@ -443,6 +534,78 @@
     </div>
 </div>
 <!--/Groups Page-->
+
+<!--Specific Group Page-->
+<div data-role="page" id="specific-group">
+	<div data-role="header" data-theme="branch">
+    	<h1>Branch</h1>
+    </div>
+    <div data-role="content">
+    	
+        <div id="specific-group-banner" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
+        	<div id="specific-group-banner-title">
+            	Boys and Girls Club San Francisco
+            </div>
+        </div>
+        
+        <div class="modbox">
+        	<div>
+            	<a data-role="button" style="margin-top:0;">Join Group</a>
+            </div>
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a id="specific-group-about-button">About</a></li>
+                    <li><a id="specific-group-upcoming-button">Upcoming</a></li>
+                    <li><a id="specific-group-past-button">Past</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="specific-group-event-container">
+            <!--One Event-->
+            <div class="container bottom-border-gray">
+                <div class="event-list-column-one small-gray-text">
+                    Feb 14
+                </div>
+                <div class="event-list-column-two">
+                    <div class="small-gray-text">
+                        Wednesday, 6:00 PM
+                    </div>
+                    <div class="margin-top-10 medium-title">
+                        Soccer in Alamo Square
+                    </div>
+                    <div class="margin-top-10 small-gray-text">
+                        20 Attendees
+                    </div>
+                </div>
+            </div>
+            <!--/One Event-->
+        </div>
+        
+        <div id="specific-group-about-container">
+        	<div class="padded-container">
+            	<div class="medium-title margin-top-20">
+                	About Boys and Girls Club
+                </div>
+                <div class="margin-top-20">
+        			In every community, boys and girls are left to find their own recreation and companionship in the streets. An increasing number of children are at home with no adult care or supervision. Young people need to know that someone cares about them.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#" data-icon="home">Feed</a></li>
+                <li><a href="#" data-icon="location">Events</a></li>
+                <li><a href="#" data-icon="grid">Groups</a></li>
+                <li><a href="#" data-icon="user">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Specific Group Page-->
 
 <!--Phonegap-->
 <script type="text/javascript" src="phonegap.js"></script>

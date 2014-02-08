@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+.hide {
+	display:none;
+}
+
 .txt-center {
 	text-align:center;
 }
@@ -11,5 +15,13 @@
 
 .margin-top-20 {
 	margin-top:1em;
+}
+
+.bottom-border-gray {
+	border-bottom:#EEE 1px solid;
+}
+
+.bottom-border-gray:last-child {
+	border-bottom:none;
 }
 
