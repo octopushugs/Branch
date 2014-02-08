@@ -5,7 +5,7 @@ resources :orgs, :students, :events
 
 namespace :api do 
 	namespace :v1, :defaults => {:format => 'json'} do
-	#	resource blah blah
+		resource :orgs, :students, :events
 
 	end
 end
