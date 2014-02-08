@@ -7,7 +7,11 @@ module Api
 			end
 
 			def show
+				
+			end
 
+			def student_groups
+			
 			end
 
 			def create
@@ -19,9 +23,10 @@ module Api
 				student.city = params[:city]
 				student.phone = params[:phone]
 				student.full_name = params[:full_name]
-	
-				student.save
+				student.zipcode = params[:zipcode]
 
+				student.save
+				render :text => "ok"
 			end
 		
 			private
