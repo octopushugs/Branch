@@ -19,7 +19,6 @@ C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\img \
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\index.html \
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\js \
-C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\phonegap.js \
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\css\index.css \
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\img\logo.png \
 C:\Users\arsoo_000\Documents\GitHub\Branch\Mobile\branch\platforms\android\assets\www\js\index.js \
