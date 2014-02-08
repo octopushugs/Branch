@@ -925,6 +925,7 @@ html .ui-alt-icon .ui-radio-off:after {
 	background-size: 2.875em 2.875em;
 }
 /* Swatches */
+
 /* A
 -----------------------------------------------------------------------------------------------------------*/
 /* Bar: Toolbars, dividers, slider track */
@@ -1484,7 +1485,6 @@ div.ui-mobile-viewport {
 	border-width: 0;
 	overflow: visible;
 	overflow-x: hidden;
-	padding: 1em;
 }
 /* Corner styling for dialogs and popups */
 .ui-corner-all > .ui-header:first-child,
