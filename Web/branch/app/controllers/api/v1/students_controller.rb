@@ -4,7 +4,7 @@ module Api
 			
 			def index
 		 
-			end
+			end	
 
 			def show
 				
@@ -12,6 +12,10 @@ module Api
 
 			def student_groups
 			
+			end
+
+			def get_events(loc)
+				
 			end
 
 			def create
