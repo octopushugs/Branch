@@ -1,0 +1,35 @@
+<body>
+	<p>Please fill out all of these fields</p>
+	<%= form_tag do %>
+		<p>Organization Name: </p> 	     
+		<input id="name" name="name" type="text"</input>
+
+		<p>Point of Contact: </p>  	     
+		<input id="ppname" name="ppname" type="text"</input>
+
+		<p>Contact Phone: </p>     	     
+		<input id="ppphone" name="ppphone" type="text"</input>
+		<p><i>4158675309</i></p>
+
+		<p>Contact Email: </p>	             
+		<input id="ppemail" name="ppemail" type="email"</input>
+
+		<p>Contact Skype or Google+: </p>    
+		<input id="ppskype" name="ppskype" type="text"</input>
+
+		<p>Description: </p>
+		<input id="description" name="description" type="text"</input>
+
+		<p>Timezone: </p>
+		<%=time_zone_select(:org, :time_zone) %>
+		
+		<p>Username: </p>
+		<input id="username" name="username" type="text"</input>
+
+		<p>Password: </p>
+		<input id="password" name="password" type="password"</input>
+		<br>
+		<input type="submit" value="Submit">
+	
+	<% end %>
+</body>

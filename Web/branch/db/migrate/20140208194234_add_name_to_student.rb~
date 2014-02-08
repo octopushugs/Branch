@@ -1,0 +1,7 @@
+class AddNameToStudent < ActiveRecord::Migration
+  def change
+	  change_table :student do |t|
+		  t.string :full_name
+	  end
+  end
+end

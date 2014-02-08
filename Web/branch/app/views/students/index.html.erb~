@@ -1,0 +1,20 @@
+<body>
+	<%= form_tag do %>
+		<p>Username: </p>
+		<input id="username" name="username" type="text"</input>
+		<p>Password: </p>
+		<input id="password" name="password" type="password"</input>
+		<p>Full Name: </p>
+		<input id="full_name" name="full_name" type="text"</input>
+		<p>Email: </p>
+		<input id="email" name="email" type="email"</input>
+		<p>Phone Number: </p>
+		<input id="phone" name="phone" type="text"</input>
+		<p>City: </p>
+		<input id="city" name="city" type="text"</input>
+			
+
+		<input id="submit" value="Submit">	
+	<% end %>
+
+</body>
