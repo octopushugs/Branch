@@ -1,6 +1,6 @@
 module Api
 	module V1
-		class StudentController < ApplicationController
+		class StudentsController < ApplicationController
 			
 			def index
 
@@ -32,7 +32,7 @@ module Api
 			private
 				def student_params
 					params.require(:student).permit(:password, :email, :dob, :city, :phone, :full_name)
-			
+				end	
 		end
 	end
 end
