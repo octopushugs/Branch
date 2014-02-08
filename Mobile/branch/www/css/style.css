@@ -6,6 +6,15 @@
 	overflow:hidden;
 }
 
+.logo {
+	position:absolute;
+	top:5px;	
+}
+
+.logo img {
+	width:140px;
+}
+
 .padded-container {
 	width:90%;
 	margin-left:auto;
@@ -161,6 +170,7 @@
 	margin-top:30%;
 	text-align:center;
 	font-size:1.4em;
+	display:none;
 }
 
 #feed-null a {

@@ -1,3 +1,13 @@
+//Logo positioning
+
+$(document).ready(positionLogo);
+
+$(window).resize(positionLogo);
+
+function positionLogo() {
+	$(".logo").css("left", ($(window).width() / 2) - 70);
+}
+
 //Get attribute from Google API
 
 function extractFromAdress(components, type){
@@ -58,8 +68,6 @@ $("#signup-button2").click(function() {
 			phone:$("#signup-phone").val(),
 			email:$("#signup-email").val(),
 			dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val()
-		}, function(data) {
-			var ajaxData = $.trim(data);
 		});
 	}
 });
@@ -79,4 +87,16 @@ $("#specific-group-past-button").click(function() {
 $("#specific-group-about-button").click(function() {
 	$("#specific-group-event-container").hide();
 	$("#specific-group-about-container").fadeIn();
+});
+
+//Click to specific event
+
+$(".event-link").click(function() {
+	$.mobile.changePage("#specific-event", { transition: "pop" } );
+});
+
+//Click to specific group
+
+$(".groups-tile").click(function() {
+	$.mobile.changePage("#specific-group", { transition: "pop" } );
 });
