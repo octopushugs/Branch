@@ -1,8 +1,11 @@
 Branch::Application.routes.draw do
 
+root 'org#org'
+resources :orgs
+
 namespace :api do 
 	namespace :v1, :defaults => {:format => 'json'} do
-		resource #blah blah
+	#	resource blah blah
 
 	end
 end
