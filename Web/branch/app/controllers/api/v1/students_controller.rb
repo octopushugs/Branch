@@ -3,7 +3,7 @@ module Api
 		class StudentsController < ApplicationController
 			
 			def index
-
+		 
 			end
 
 			def show
