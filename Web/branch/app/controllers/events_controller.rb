@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 		event.description = params[:description]
 		event.time = params[:time]
 		event.date = params[:date]
+		#don't forget to assign org_id from session
 
 		event.save
 		
