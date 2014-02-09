@@ -10,12 +10,10 @@ module Api
 				
 			end
 
-			def student_groups
-			
-			end
+			def student_orgs(id)
 
-			def get_events(loc)
 				
+							
 			end
 
 			def create
