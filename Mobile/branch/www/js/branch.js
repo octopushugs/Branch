@@ -60,6 +60,14 @@ $(document).on("pageshow", "#kid-signup2", function() {
 		$.get("http://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng=" + position.coords.latitude + "," + position.coords.longitude, function(data) {
 			$("#signup-zipcode").val(extractFromAdress(data.results[0].address_components, "postal_code"));
 		});
+		
+		//Get timezone
+		
+		var currentTime = Math.round(new Date().getTime() / 1000);
+		
+		$.get("https://maps.googleapis.com/maps/api/timezone/json?sensor=false&location=" + position.coords.latitude + "," + position.coords.longitude + "&timestamp=" + currentTime, function(data) {
+			localStorage.setItem("signup_timezone", data["timeZoneId"]);
+		});
 	}
 });
 
@@ -90,6 +98,9 @@ $("#signup-button2").click(function() {
 		alert("Please enter all information");
 		return false;
 	} else {
+		
+		//Send it to the backend!
+		
 		$.post("http://localhost:3000/api/v1/students", {
 			full_name:$("#signup-fullname").val(),
 			username:$("#signup-username").val(),
@@ -97,7 +108,8 @@ $("#signup-button2").click(function() {
 			zipcode:$("#signup-zipcode").val(),
 			phone:$("#signup-phone").val(),
 			email:$("#signup-email").val(),
-			dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val()
+			dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val(),
+			timezone: localStorage.getItem("signup_timezone")
 		}, function() {
 			$.mobile.changePage("#feed", { transition: "pop" } );
 		});
@@ -161,4 +173,14 @@ $("#login-submit").click(function() {
 			}
 		});
 	}
+});
+
+/* AUTOLOADER PAST HERE */
+
+$(document).on("pageshow", "#groups", function() {
+	$.post("http://localhost:3000/api/v1/layout/orgs", {
+		zipcode: localStorage.getItem("branch_zip")
+	}, function(data) {
+		$("#group-tiles-container").html(data);
+	});
 });

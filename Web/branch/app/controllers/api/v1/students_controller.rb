@@ -28,6 +28,7 @@ module Api
 				student.phone = params[:phone]
 				student.full_name = params[:full_name]
 				student.zipcode = params[:zipcode]
+				student.timezone = params[:timezone]
 
 				student.save
 				render :text => "ok"
