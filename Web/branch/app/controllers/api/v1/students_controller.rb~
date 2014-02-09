@@ -8,13 +8,14 @@ module Api
 
 			def student_orgs
 				found_orgs = Student_org_lt.where("student_id = ? AND org_id = ?", params[:s_id], params[:o_id]
-				result = Org.find_by(found_orgs)
+				Org.find_by(found_orgs)
 							
 			end
 
 			def student_events
 				found_events = Student_event_lt.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id]
-				result = Event.find(found_events)
+				Event.find(found_events)
+			end
 
 			def rsvp
 				events = Student_event_lt.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id])

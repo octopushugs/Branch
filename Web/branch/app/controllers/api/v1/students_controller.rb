@@ -8,7 +8,7 @@ module Api
 
 			def student_orgs
 				found_orgs = Student_org_lt.where("student_id = ? AND org_id = ?", params[:s_id], params[:o_id]
-				Org.find_by(found_orgs)
+				Org.find(found_orgs)
 							
 			end
 
