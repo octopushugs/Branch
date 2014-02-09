@@ -3,18 +3,18 @@ module Api
 		class StudentsController < ApplicationController
 			
 			def index
-		 
+		 		Student.where("student_id = ?", params[:s_id])
 			end	
 
-			def show
-				
-			end
-
 			def student_orgs
-				
-				
+				found_orgs = Student_org_lt.where("student_id = ? AND org_id = ?", params[:s_id], params[:o_id]
+				Org.find(found_orgs)
 							
 			end
+
+			def student_events
+				found_events = Student_event_lt.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id]
+				Event.find(found_events)
 
 			def rsvp
 				events = Student_event_lt.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id])

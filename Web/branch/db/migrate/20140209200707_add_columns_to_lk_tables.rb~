@@ -1,0 +1,4 @@
+class AddColumnsToLkTables < ActiveRecord::Migration
+  def change
+  end
+end
