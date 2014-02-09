@@ -191,27 +191,51 @@ $("#login-submit").click(function() {
 
 /* AUTOLOADER PAST HERE */
 
-//Get suggested groups
+//Get different types of groups
 
 $(document).on("pageshow", "#groups", function() {
-	getSuggestedOrgs();
+	getOrgs("suggested");
 });
 
 $("#suggested-groups-button").click(function() {
-	getSuggestedOrgs();
+	getOrgs("suggested");
 });
 
-function getSuggestedOrgs() {
+$("#my-groups-button").click(function() {
+	getOrgs("mine");
+});
+
+function getOrgs(type) {
 	showLoader();
-	$.post("http://localhost:3000/api/v1/layout/orgs", {
-		zipcode: localStorage.getItem("branch_zip")
-	}, function(data) {
-		if (data == "none") {
+	
+	if (type == "suggested") {
+		var endpoint = "http://localhost:3000/api/v1/layout/orgs";
+	} else if (type == "mine") {
+		var endpoint = "http://localhost:3000/api/v1/layout/orgs";
+	}
+	
+	//Make the call
+	
+	$.ajax({
+		cache: false,
+		url: endpoint,
+		type: "POST",
+		data: {
+			zipcode: localStorage.getItem("branch_zip")
+		},
+		success: function(data) {
+			console.log(data['error']);
+			if (data == "none") {
+				hideLoader();
+				$("#groups-null").show();
+			} else {
+				$("#group-tiles-container").html(data);
+				hideLoader();
+			}
+		},
+		error: function(request, status, error) {
 			hideLoader();
-			$("#groups-null").show();
-		} else {
-			$("#group-tiles-container").html(data);
-			hideLoader();
+			alert("There was an error processing your request");
 		}
 	});
 }

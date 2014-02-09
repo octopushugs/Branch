@@ -4,7 +4,7 @@ Branch::Application.routes.draw do
 resources :orgs, :students, :events
 
 namespace :api do 
-	namespace :v1, :defaults => {:format => 'json'} do
+	namespace :v1 do
 		resource :orgs, :students, :events
     post '/login' => 'login#check_login'
 

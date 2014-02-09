@@ -10,10 +10,10 @@ module Api
 				groups_list = Org.where(zipcode: min_zip..max_zip)
 
 				if groups_list.first == nil
-					render :text => 'none'
+					render :text => "none"
 				else
 					@groups_list = groups_list
-					render :file => 'pagelayouts/orglist.html.erb', layout: false
+					render 'pagelayouts/orglist', layout: false
 				end
 			end
 		end
