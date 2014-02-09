@@ -7,7 +7,13 @@ module Api
 				
 				#Get group list between min and max zipcodes
 
-				@groups_list = Org.where(zipcode: min_zip..max_zip)
+				groups_list = Org.where(zipcode: min_zip..max_zip)
+				
+				if groups_list.first == nil
+					@groups_list = "none"
+				else
+					@groups_list = groups_list
+				end
 
 				#Render out view
 

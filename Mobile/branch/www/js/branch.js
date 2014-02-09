@@ -198,5 +198,8 @@ $(document).on("pageshow", "#groups", function() {
 	}, function(data) {
 		$("#group-tiles-container").html(data);
 		hideLoader();
-	});
+	}).fail(function() {
+		hideLoader();
+		alert("There was a connection error");
+	});;
 });
