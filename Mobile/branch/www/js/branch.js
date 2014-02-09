@@ -5,7 +5,7 @@ $(document).ready(positionLogo);
 $(window).resize(positionLogo);
 
 function positionLogo() {
-	$(".logo").css("left", ($(window).width() / 2) - 70);
+	$(".logo").css("left", ($(window).width() / 2) - 85);
 }
 
 //Get attribute from Google API
@@ -42,6 +42,7 @@ $("#signup-button1").click(function() {
 		$("#signup-password1").val() == "" ||
 		$("#signup-password2").val() == ""
 	) {
+		alert("Please enter all information");
 		return false;
 	} else {
 		$.mobile.changePage("#kid-signup2", { transition: "fade" } );
@@ -52,7 +53,6 @@ $("#signup-button2").click(function() {
 	if (
 		$("#signup-zipcode").val() == "" ||
 		$("#signup-phone").val() == "" ||
-		$("#signup-email").val() == "" ||
 		$("#signup-bday-month").val() == "" ||
 		$("#signup-bday-day").val() == "" ||
 		$("#signup-bday-year").val() == ""
