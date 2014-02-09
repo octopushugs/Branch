@@ -9,6 +9,8 @@ namespace :api do
     post '/login' => 'login#check_login'
 
     post '/layout/orgs/' => 'pagelayouts#get_orgs'
+
+    post '/layout/orgabout/' => 'pagelayouts#get_org_about'
 	end
 end
   # The priority is based upon order of creation: first created -> highest priority.

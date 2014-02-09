@@ -156,6 +156,7 @@ $(".event-link").click(function() {
 //Click to specific group
 
 $(document).on("click", ".groups-tile", function() {
+	localStorage.setItem("group_selected", $(this).attr("id"));
 	$.mobile.changePage("#specific-group", { transition: "pop" } );
 });
 
@@ -177,6 +178,7 @@ $("#login-submit").click(function() {
 				//Store "session" stuff for use later on
 				
 				localStorage.setItem("branch_login", true);
+				localStorage.setItem("branch_id", data["id"]);
 				localStorage.setItem("branch_username", data["username"]);
 				localStorage.setItem("branch_zip", data["zipcode"]);
 				localStorage.setItem("branch_fullname", data["full_name"]);
@@ -214,7 +216,7 @@ function getOrgs(type) {
 		var endpoint = "http://localhost:3000/api/v1/layout/orgs";
 	}
 	
-	//Make the call
+	//Get list of organizations either suggested or owned
 	
 	$.ajax({
 		cache: false,
@@ -224,7 +226,6 @@ function getOrgs(type) {
 			zipcode: localStorage.getItem("branch_zip")
 		},
 		success: function(data) {
-			console.log(data['error']);
 			if (data == "none") {
 				hideLoader();
 				$("#groups-null").show();
@@ -233,9 +234,63 @@ function getOrgs(type) {
 				hideLoader();
 			}
 		},
-		error: function(request, status, error) {
+		error: function() {
 			hideLoader();
 			alert("There was an error processing your request");
 		}
 	});
 }
+
+//Get specific organization information
+
+$(document).on("pageshow", "#specific-group", function() {
+	showLoader();
+
+	//Get about the organization information
+
+	$.ajax({
+		cache: false,
+		url: "http://localhost:3000/api/v1/layout/orgabout",
+		type: "POST",
+		data: {
+			orgid: localStorage.getItem("group_selected")
+		},
+		success: function(data) {
+			hideLoader();
+			$("#specific-group-join-button").attr("onClick", "joinGroup('" + localStorage.getItem("group_selected") + "');");
+			$("#specific-group-banner-title").html(data["name"]);
+			$("#specific-group-about-title").html("About " + data["name"]);
+			$("#specific-group-about-text").html(data["description"]);
+		},
+		error: function() {
+			hideLoader();
+			alert("There was an error processing your request");
+		}
+	});	
+});
+
+//Join a group
+
+function joinGroup(id) {
+	showLoader();
+	
+	//Join an organization
+	
+	$.ajax({
+		cache: false,
+		url: "http://localhost:3000/api/v1/students/",
+		type: "POST",
+		data: {
+			s_id: localStorage.getItem("branch_id"),
+			o_id: id
+		},
+		success: function(data) {
+			
+		},
+		error: function() {
+			hideLoader();
+			alert("There was an error processing your request");
+		}
+	});	
+}
+

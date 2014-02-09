@@ -1,6 +1,6 @@
 <% @groups_list.each do |group| %>
 <!--One Group Tile-->
-<div class="groups-tile">
+<div id="<%= group.id %>" class="groups-tile">
 	<div class="groups-tile-image" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
     	<%= group.name %>
     </div>

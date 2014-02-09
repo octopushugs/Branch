@@ -16,6 +16,11 @@ module Api
 					render 'pagelayouts/orglist', layout: false
 				end
 			end
+
+			def get_org_about
+				org_info = Org.where(id: params[:orgid]).first
+				render :json => org_info
+			end
 		end
 	end
 end
