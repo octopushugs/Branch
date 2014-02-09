@@ -151,6 +151,16 @@
 	background-color:#EBEBEB;
 }
 
+#groups-null {
+	font-size:1.3em;
+	color:#999;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-4.5em;
+	display:none;
+}
+
 /*Specific Group Page*/
 
 #specific-group-event-container {

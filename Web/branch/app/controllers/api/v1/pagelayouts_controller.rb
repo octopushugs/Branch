@@ -8,16 +8,13 @@ module Api
 				#Get group list between min and max zipcodes
 
 				groups_list = Org.where(zipcode: min_zip..max_zip)
-				
+
 				if groups_list.first == nil
-					@groups_list = "none"
+					render :text => 'none'
 				else
 					@groups_list = groups_list
+					render :file => 'pagelayouts/orglist.html.erb', layout: false
 				end
-
-				#Render out view
-
-				render :file => 'pagelayouts/orglist.html.erb', layout: false
 			end
 		end
 	end

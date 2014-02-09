@@ -155,7 +155,7 @@ $(".event-link").click(function() {
 
 //Click to specific group
 
-$(".groups-tile").click(function() {
+$(document).on("click", ".groups-tile", function() {
 	$.mobile.changePage("#specific-group", { transition: "pop" } );
 });
 
@@ -191,15 +191,27 @@ $("#login-submit").click(function() {
 
 /* AUTOLOADER PAST HERE */
 
+//Get suggested groups
+
 $(document).on("pageshow", "#groups", function() {
+	getSuggestedOrgs();
+});
+
+$("#suggested-groups-button").click(function() {
+	getSuggestedOrgs();
+});
+
+function getSuggestedOrgs() {
 	showLoader();
 	$.post("http://localhost:3000/api/v1/layout/orgs", {
 		zipcode: localStorage.getItem("branch_zip")
 	}, function(data) {
-		$("#group-tiles-container").html(data);
-		hideLoader();
-	}).fail(function() {
-		hideLoader();
-		alert("There was a connection error");
-	});;
-});
+		if (data == "none") {
+			hideLoader();
+			$("#groups-null").show();
+		} else {
+			$("#group-tiles-container").html(data);
+			hideLoader();
+		}
+	});
+}
