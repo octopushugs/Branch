@@ -1,0 +1,4 @@
+class EventOrgRelationship < ActiveRecord::Migration
+  def change
+  end
+end

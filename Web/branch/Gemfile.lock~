@@ -117,7 +117,10 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+<<<<<<< HEAD
+=======
   omniauth
+>>>>>>> 0db1139df58a1905fb1c3cb933851cca0002f370
   rack-cors
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)

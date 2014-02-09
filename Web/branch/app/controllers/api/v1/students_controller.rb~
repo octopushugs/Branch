@@ -4,7 +4,10 @@ module Api
 			
 			def index
 		 
-			end	
+			end
+
+			def logged_in(uname, pword)
+				
 
 			def show
 				
