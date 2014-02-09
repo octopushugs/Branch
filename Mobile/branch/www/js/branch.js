@@ -285,7 +285,7 @@ function joinGroup(id) {
 			o_id: id
 		},
 		success: function(data) {
-			
+			hideLoader();
 		},
 		error: function() {
 			hideLoader();
