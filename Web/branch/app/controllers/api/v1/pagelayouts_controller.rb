@@ -21,6 +21,10 @@ module Api
 				org_info = Org.where(id: params[:orgid]).first
 				render :json => org_info
 			end
+
+			def feed
+				render 'pagelayouts/eventlist'
+			end
 		end
 	end
 end
