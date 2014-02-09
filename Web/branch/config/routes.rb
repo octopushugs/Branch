@@ -5,12 +5,17 @@ resources :orgs, :students, :events
 
 namespace :api do 
 	namespace :v1 do
-		resource :orgs, :students, :events
-    post '/login' => 'login#check_login'
+		post '/login' => 'login#check_login'
+		post '/layout/orgs/' => 'pagelayouts#get_orgs'
+		post '/layout/orgabout/' => 'pagelayouts#get_org_about'
 
-    post '/layout/orgs/' => 'pagelayouts#get_orgs'
+		post '/index' => 'students#index'
+		post '/student_orgs' => 'students#student_orgs'
+		post '/student_events' => 'students#student_events'
+		post '/rsvp' => 'students#rsvp'
+		post '/join' => 'students#join'
+		post '/create' => 'students#create'
 
-    post '/layout/orgabout/' => 'pagelayouts#get_org_about'
 	end
 end
   # The priority is based upon order of creation: first created -> highest priority.
