@@ -6,7 +6,7 @@ resources :orgs, :students, :events
 namespace :api do 
 	namespace :v1, :defaults => {:format => 'json'} do
 		resource :orgs, :students, :events
-
+    post '/login' => 'login#check_login'
 	end
 end
   # The priority is based upon order of creation: first created -> highest priority.

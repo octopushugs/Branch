@@ -1,3 +1,33 @@
+//Check for login
+
+function checkLogin() {
+	if (!localStorage.getItem("branch_login")) {
+		$.mobile.changePage("#kid-login");
+	}
+}
+
+//Screen out un-logged in people
+
+$(document).on("pagebeforeshow", "#feed", checkLogin);
+$(document).on("pagebeforeshow", "#event-list", checkLogin);
+$(document).on("pagebeforeshow", "#specific-event", checkLogin);
+$(document).on("pagebeforeshow", "#groups", checkLogin);
+$(document).on("pagebeforeshow", "#specific-group", checkLogin);
+
+//Handle logout
+
+$("#logout-button").click(function() {
+	localStorage.removeItem("branch_login");
+	localStorage.removeItem("branch_username");
+	localStorage.removeItem("branch_zip");
+	localStorage.removeItem("branch_fullname");
+	localStorage.removeItem("branch_phone");
+	localStorage.removeItem("branch_email");
+	localStorage.removeItem("branch_dob");
+	
+	$.mobile.changePage("#kid-login", { transition: "turn" } );
+});
+
 //Logo positioning
 
 $(document).ready(positionLogo);
@@ -5,7 +35,7 @@ $(document).ready(positionLogo);
 $(window).resize(positionLogo);
 
 function positionLogo() {
-	$(".logo").css("left", ($(window).width() / 2) - 85);
+	$(".logo").css("left", ($(window).width() / 2) - 65);
 }
 
 //Get attribute from Google API
@@ -60,7 +90,7 @@ $("#signup-button2").click(function() {
 		alert("Please enter all information");
 		return false;
 	} else {
-		$.post("http://ec2-54-200-118-175.us-west-2.compute.amazonaws.com:3000/api/v1/students", {
+		$.post("http://localhost:3000/api/v1/students", {
 			full_name:$("#signup-fullname").val(),
 			username:$("#signup-username").val(),
 			password:$("#signup-password1").val(),
@@ -68,6 +98,8 @@ $("#signup-button2").click(function() {
 			phone:$("#signup-phone").val(),
 			email:$("#signup-email").val(),
 			dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val()
+		}, function() {
+			$.mobile.changePage("#feed", { transition: "pop" } );
 		});
 	}
 });
@@ -99,4 +131,34 @@ $(".event-link").click(function() {
 
 $(".groups-tile").click(function() {
 	$.mobile.changePage("#specific-group", { transition: "pop" } );
+});
+
+//Handle login
+
+$("#login-submit").click(function() {
+	if ($("#login-username").val() == "" || $("#login-password").val() == "") {
+		alert("Please enter all information");
+		return false;
+	} else {
+		$.post("http://localhost:3000/api/v1/login", {
+			username: $("#login-username").val(),
+			password: $("#login-password").val()
+		}, function(data) {
+			if (data == "none") {
+				alert("Login failed");
+				return false;
+			} else {
+				//Store "session" stuff for use later on
+				
+				localStorage.setItem("branch_login", true);
+				localStorage.setItem("branch_username", data["username"]);
+				localStorage.setItem("branch_zip", data["zipcode"]);
+				localStorage.setItem("branch_fullname", data["full_name"]);
+				localStorage.setItem("branch_phone", data["phone"]);
+				localStorage.setItem("branch_email", data["email"]);
+				localStorage.setItem("branch_dob", data["dob"]);
+				$.mobile.changePage("#feed", { transition: "pop" } );
+			}
+		});
+	}
 });
