@@ -1,7 +1,8 @@
+<%= @groups_list.each do |group| %>
 <!--One Group Tile-->
 <div class="groups-tile">
 	<div class="groups-tile-image" style="background:url(img/clubhouse-test.jpg) no-repeat; background-size:cover;">
-    	Boys and Girls Club SF
+    	<%= group.name %>
     </div>
     <div class="groups-tile-meta">
     	<div class="margin-top-10 small-text">
@@ -13,3 +14,4 @@
     </div>
 </div>
 <!--/One Group Tile-->
+<% end %>

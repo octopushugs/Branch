@@ -28,6 +28,20 @@ $("#logout-button").click(function() {
 	$.mobile.changePage("#kid-login", { transition: "turn" } );
 });
 
+//General loading functions
+
+function showLoader() {
+	$.mobile.loading('show', {
+		text: 'Loading...',
+		textVisible: true,
+		theme: 'b'
+	});
+}
+
+function hideLoader() {
+	$.mobile.loading("hide");
+}
+
 //Logo positioning
 
 $(document).ready(positionLogo);
@@ -178,9 +192,11 @@ $("#login-submit").click(function() {
 /* AUTOLOADER PAST HERE */
 
 $(document).on("pageshow", "#groups", function() {
+	showLoader();
 	$.post("http://localhost:3000/api/v1/layout/orgs", {
 		zipcode: localStorage.getItem("branch_zip")
 	}, function(data) {
 		$("#group-tiles-container").html(data);
+		hideLoader();
 	});
 });
