@@ -29,9 +29,9 @@ module Api
 			end
 
 			def join
-				orgs = Student_org_lt.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id])
+				orgs = Student_org_lts.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id])
 				if orgs.nil?
-					new_join = Student_org_lt.new
+					new_join = Student_org_lts.new
 					new_join.student_id = params[:s_id]
 					new_join.org_id = params[:o_id]
 
