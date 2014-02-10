@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+.modbox, .small-modbox, .full-modbox, .white-modbox {
+	background-color:#EBEBEB;
+	border:#CCC 1px solid;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:1em;
+	width:40%;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+}
+
+.full-modbox {
+	width:95%;
+}
+
+.small-modbox {
+	width:25%;
+}
+
+.white-modbox {
+	width:100%;
+	background-color:#FFF;
+}
+
+.event-list {
+	background-color:#EBEBEB;
+}
+

@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+.txt-center {
+	text-align:center;
+}
+
+.txt-right {
+	text-align:right;
+}
+
+.margin-top-20 {
+	margin-top:1.25em;
+}
+
+.margin-top-10 {
+	margin-top:1em;
+}
+
+.margin-top-5 {
+	margin-top:0.5em;
+}
+
+.no-pad {
+	padding:0;
+}
+
+/*TITLES*/
+
+.large-gray-title {
+	font-size:2em;
+	color:#999;
+}
+
+.large-black-title {
+	font-size:2em;
+	color:#333;
+}
+

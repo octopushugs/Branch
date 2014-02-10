@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Branch</title>
+
+<link rel="stylesheet" type="text/css" href="libraries/jquery-ui-1.10.1/css/ui-lightness/jquery-ui-1.10.4.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.1.0/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="libraries/font-awesome-4.0.3/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/helpers.css" />
+
+</head>
+
+<body>
+
+<!--Logged In Header Bar-->
+<nav class="navbar navbar-default hide" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="branch-navbar">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boys and Girls Club <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add Event</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--Logged In Header Bar-->
+
+<!--Header Bar-->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="branch-navbar">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><A href="#">Signup for Program</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--In Header Bar-->
+
+<!--Signup Box-->
+<div class="modbox">
+	<div class="txt-center large-gray-title">
+    	Signup as an Organization
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Name of Organization</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input type="text" placeholder="Name" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Username</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input type="text" placeholder="Username" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Password</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input type="password" placeholder="Password" class="form-control" />
+        </div>
+    </div>
+    <div class="margin-top-20">
+    	<div>
+        	<strong>Point Person Contact Information</strong>
+        </div>
+        <div class="row margin-top-20">
+        	<div class="col-sm-3">
+            	<input type="text" placeholder="Full Name" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+            	<input type="tel" placeholder="Telephone Number" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+            	<input type="email" placeholder="Email Address" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+            	<input type="text" placeholder="Skype/Google Handle" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Organization Zipcode</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input type="tel" placeholder="Zipcode" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Organization Timezone</strong>
+        </div>
+        <div class="margin-top-20">
+        	<select class="form-control">
+            	<option>Timezone 1</option>
+            </select>
+        </div>
+    </div>
+    <div class="margin-top-20">
+    	<div>
+        	<strong>Organization Description</strong>
+        </div>
+        <div class="margin-top-20">
+        	<textarea class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="margin-top-20 txt-center">
+    	<button class="btn btn-primary" data-toggle="modal" data-target="#confirm-signup-modal">Submit</button>
+    </div>
+</div>
+<!--/Signup Box-->
+
+<!--Confirm Signup Modal-->
+<div id="confirm-signup-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirm Appointment</h4>
+      </div>
+      <div class="modal-body">
+      	<div>
+        	In order to ensure that all organizations are legitimate, and for the protection of the children who use the application, all organizations are required to participate in a 5 minute or less screening via video chat. Please select a date and time when you can be contacted to verify your organization.
+        </div>
+        <div class="row margin-top-20">
+        	<div class="col-sm-6">
+            	<div>
+                	<strong>Date</strong>
+                </div>
+                <div class="margin-top-10">
+                	<input type="text" id="datepicker" class="form-control" placeholder="Date" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+            	<div>
+                	<strong>Time</strong>
+                </div>
+                <div class="margin-top-10">
+                	<input type="text" class="form-control" placeholder="Ex: 2:00 PM" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="submit-app-button" type="button" class="btn btn-primary">Submit Application</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--/Confirm Signup Modal-->
+
+<script type="text/javascript" src="libraries/jquery-2.1.0/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="libraries/jquery-ui-1.10.1/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="libraries/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/branch-web.js"></script>
+
+<script type="text/javascript">
+$("#datepicker").datepicker({
+	dateFormat: "mm-dd-yy"
+});
+</script>
+
+</body>
+</html>

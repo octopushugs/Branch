@@ -20,6 +20,14 @@ namespace :api do
 
 	end
 end
+
+get 'signup/' => 'signup#index'
+post 'signup/' => 'signup#process_signup'
+
+get 'login/' => 'login#index'
+post 'login/' => 'login#process_login'
+
+get 'dashboard/' => 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210003744) do
+ActiveRecord::Schema.define(version: 20140210205318) do
 
   create_table "events", force: true do |t|
     t.datetime "created_at"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20140210003744) do
     t.string   "description"
     t.string   "timezone"
     t.integer  "zipcode"
+    t.string   "pphandle"
+    t.string   "pphandletype"
+    t.string   "org_appointment_date"
   end
 
   create_table "selookups", force: true do |t|

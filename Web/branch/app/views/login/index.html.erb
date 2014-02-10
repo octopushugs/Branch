@@ -1,0 +1,50 @@
+<body>
+
+<!--Header Bar-->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="branch-navbar">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><A href="#">Signup for Program</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--In Header Bar-->
+
+<div class="small-modbox">
+  <%= form_tag do %>
+	<div class="large-gray-title">
+    	Login
+    </div>
+    <div class="margin-top-20">
+    	<input name="login_username" type="text" class="form-control" placeholder="Username" />
+    </div>
+    <div class="margin-top-20">
+    	<input name="login_password" type="password" class="form-control" placeholder="Password" />
+    </div>
+    <div class="txt-center margin-top-20">
+    	<button type="submit" class="btn btn-primary">Login</button>
+    </div>
+    <% end %>
+</div>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+</body>

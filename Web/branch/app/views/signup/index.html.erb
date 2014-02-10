@@ -1,0 +1,177 @@
+<body>
+
+<!--Header Bar-->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="branch-navbar">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><A href="#">Signup for Program</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--In Header Bar-->
+
+<%= form_tag '/signup', :id => "signup-form" do %>
+
+<!--Signup Box-->
+<div class="modbox">
+	<div class="txt-center large-gray-title">
+    	Signup as an Organization
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Name of Organization</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input name="org_name" type="text" placeholder="Name" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Username</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input name="org_username" type="text" placeholder="Username" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Password</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input name="org_password" type="password" placeholder="Password" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+        <div>
+            <strong>Confirm Password</strong>
+        </div>
+        <div class="margin-top-20">
+            <input name="org_password2" type="password" placeholder="Confirm Password" class="form-control" />
+        </div>
+    </div>
+    <div class="margin-top-20">
+    	<div>
+        	<strong>Point Person Contact Information</strong>
+        </div>
+        <div class="row margin-top-20">
+        	<div class="col-sm-2">
+            	<input name="pp_name" type="text" placeholder="Full Name" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+            	<input name="pp_tel" type="tel" placeholder="Telephone Number" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+            	<input name="pp_email" type="email" placeholder="Email" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+            	<input name="pp_handle" type="text" placeholder="Skype/Google Handle" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <select name="org_handletype" class="form-control">
+                    <option value="skype">Skype</option>
+                    <option value="gchat">Google Hangout</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Organization Zipcode</strong>
+        </div>
+        <div class="margin-top-20">
+        	<input name="org_zip" type="tel" placeholder="Zipcode" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group margin-top-20">
+    	<div>
+        	<strong>Organization Timezone</strong>
+        </div>
+        <div class="margin-top-20">
+        	<%= time_zone_select( "org", "time_zone", ActiveSupport::TimeZone.all.sort) %>
+        </div>
+    </div>
+    <div class="margin-top-20">
+    	<div>
+        	<strong>Organization Description</strong>
+        </div>
+        <div class="margin-top-20">
+        	<textarea name="org_description" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="margin-top-20 txt-center">
+    	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-signup-modal">Submit</button>
+    </div>
+</div>
+<!--/Signup Box-->
+
+<!--Confirm Signup Modal-->
+<div id="confirm-signup-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirm Appointment</h4>
+      </div>
+      <div class="modal-body">
+      	<div>
+        	In order to ensure that all organizations are legitimate, and for the protection of the children who use the application, all organizations are required to participate in a 5 minute or less screening via video chat. Please select a date and time when you can be contacted to verify your organization.
+        </div>
+        <div class="row margin-top-20">
+        	<div class="col-sm-6">
+            	<div>
+                	<strong>Date</strong>
+                </div>
+                <div class="margin-top-10">
+                	<input type="text" id="datepicker" class="form-control" placeholder="Date" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+            	<div>
+                	<strong>Time</strong>
+                </div>
+                <div class="margin-top-10">
+                	<input type="text" class="form-control" placeholder="Ex: 2:00 PM" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="submit-app-button" type="submit" class="btn btn-primary">Submit Application</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--/Confirm Signup Modal-->
+
+<% end %>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#datepicker").datepicker({
+        dateFormat: "mm-dd-yy"
+    });
+})
+</script>
+
+</body>

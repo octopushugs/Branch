@@ -1,0 +1,26 @@
+class SignupController < ApplicationController
+	def index
+	end
+
+	def process_signup
+
+		new_org = Org.new
+		new_org.name = params[:org_name]
+		new_org.username = params[:org_username]
+		new_org.password = params[:org_password]
+		new_org.ppname = params[:pp_name]
+		new_org.ppphone = params[:pp_tel]
+		new_org.ppemail = params[:pp_email]
+		new_org.pphandle = params[:pp_handle]
+		new_org.pphandletype = params[:pp_handletype]
+		new_org.description = params[:org_description]
+		new_org.zipcode = params[:org_zip]
+		new_org.timezone = params[:org][:time_zone]
+		new_org.approved = false
+
+		new_org.save
+
+		redirect_to url_for(:controller => 'login')
+
+	end
+end

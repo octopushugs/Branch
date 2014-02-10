@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Branch</title>
+
+<link rel="stylesheet" type="text/css" href="libraries/jquery-ui-1.10.1/css/ui-lightness/jquery-ui-1.10.4.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.1.0/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="libraries/font-awesome-4.0.3/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/helpers.css" />
+
+</head>
+
+<body>
+
+<!--Logged In Header Bar-->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="branch-navbar">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boys and Girls Club <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add Event</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--Logged In Header Bar-->
+
+<div class="container-fluid">
+	<div class="alert alert-danger">
+    	Your application has not been approved yet. You will not be able to post any events.
+    </div>
+	<div class="row">
+    	<div class="col-sm-6">
+        	<div class="full-modbox">
+            	<div class="txt-center large-gray-title">
+                	Add an Event
+                </div>
+                <div class="margin-top-20">
+                	<div>
+                    	<strong>Name of Event</strong>
+                    </div>
+                    <div class="margin-top-10">
+                    	<input type="text" class="form-control" placeholder="Name of Event" />
+                    </div>
+                </div>
+                <div class="margin-top-20">
+                	<div>
+                    	<strong>Date of Event</strong>
+                    </div>
+                    <div class="margin-top-10">
+                    	<input id="datepicker" type="text" class="form-control" placeholder="Date" />
+                    </div>
+                </div>
+                <div class="margin-top-20">
+                	<div class="row">
+                        <div class="col-sm-6">
+                            <div>
+                                <strong>Start Time of Event</strong>
+                            </div>
+                            <div class="row margin-top-10">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" placeholder="Ex: 2:00" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control">
+                                        <option value="am">AM</option>
+                                        <option value="pm">PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+                                <strong>End Time of Event</strong>
+                            </div>
+                            <div class="row margin-top-10">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" placeholder="Ex: 2:00" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control">
+                                        <option value="am">AM</option>
+                                        <option value="pm">PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-top-20">
+                	<div>
+                    	<strong>Address of Event</strong>
+                    </div>
+                    <div class="margin-top-10">
+                    	<input type="text" class="form-control" placeholder="Address" />
+                    </div>
+                </div>
+                <div class="margin-top-20">
+                	<div>
+                    	<strong>Event Details</strong>
+                    </div>
+                    <div class="margin-top-10">
+                    	<textarea class="form-control" placeholder="Use this space to write details about your event. Be specific."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 event-list">
+        	<div class="large-black-title">
+            	My Events
+            </div>
+            <div class="margin-top-20 white-modbox">
+            	<div>
+                	<strong>This is my title</strong>
+                </div>
+                <div class="margin-top-5">
+                	This is my description
+                </div>
+                <div class="row margin-top-10">
+                	<div class="col-sm-3">
+                    	<i class="fa fa-calendar"></i> February 14, 2014
+                    </div>
+                    <div class="col-sm-3">
+                    	<i class="fa fa-clock-o"></i> 2:00 PM
+                    </div>
+                    <div class="col-sm-6">
+                    	<i class="fa fa-map-marker"></i> 601 Montgomery Street, San Francisco, CA
+                    </div>
+                </div>
+                <div class="margin-top-20">
+            		<a class="btn btn-warning">Edit</a>
+            		<a class="btn btn-primary">Delete</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="libraries/jquery-2.1.0/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="libraries/jquery-ui-1.10.1/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="libraries/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/branch-web.js"></script>
+
+<script type="text/javascript">
+$("#datepicker").datepicker({
+	dateFormat: "mm-dd-yy"
+});
+</script>
+
+</body>
+</html>
