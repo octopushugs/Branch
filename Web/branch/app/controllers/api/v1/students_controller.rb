@@ -8,7 +8,7 @@ module Api
 
 			def rsvp
 				events = Selookup.where("student_id = ? AND event_id = ?", params[:s_id], params[:e_id])
-				if events.first.nil?	
+				if events.first == nil	
 					new_rsvp = Selookup.new
 					new_rsvp.student_id = params[:s_id]
 					new_rsvp.event_id = params[:e_id]
@@ -21,8 +21,8 @@ module Api
 			end
 
 			def join
-				orgs = Solookup.where("student_id = ? AND org_id = ?", params[:s_id], params[:e_id])
-				if orgs.first.nil?
+				orgs = Solookup.where("student_id = ? AND org_id = ?", params[:s_id], params[:o_id])
+				if orgs.first == nil
 					new_join = Solookup.new
 					new_join.student_id = params[:s_id]
 					new_join.org_id = params[:o_id]
