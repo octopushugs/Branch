@@ -25,6 +25,10 @@ module Api
 			def feed
 				render 'pagelayouts/eventlist'
 			end
+
+			def event_list
+				render 'pagelayouts/eventlist'
+			end
 		end
 	end
 end

@@ -119,19 +119,32 @@ $("#signup-button2").click(function() {
 		return false;
 	} else {
 		
+		showLoader();
+		
 		//Send it to the backend!
 		
-		$.post("http://localhost:3000/api/v1/students", {
-			full_name:$("#signup-fullname").val(),
-			username:$("#signup-username").val(),
-			password:$("#signup-password1").val(),
-			zipcode:$("#signup-zipcode").val(),
-			phone:$("#signup-phone").val(),
-			email:$("#signup-email").val(),
-			dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val(),
-			timezone: localStorage.getItem("signup_timezone")
-		}, function() {
-			$.mobile.changePage("#feed", { transition: "pop" } );
+		$.ajax({
+			cache: false,
+			url: "http://localhost:3000/api/v1/create/",
+			type: "POST",
+			data: {
+				full_name:$("#signup-fullname").val(),
+				username:$("#signup-username").val(),
+				password:$("#signup-password1").val(),
+				zipcode:$("#signup-zipcode").val(),
+				phone:$("#signup-phone").val(),
+				email:$("#signup-email").val(),
+				dob:$("#signup-bday-month").val() + "-" + $("#signup-bday-day").val() + "-" + $("#signup-bday-year").val(),
+				timezone: localStorage.getItem("signup_timezone")
+			},
+			success: function(data) {
+				hideLoader();
+				$.mobile.changePage("#feed", { transition: "pop" } );
+			},
+			error: function() {
+				hideLoader();
+				alert("There was an error processing your request");
+			}
 		});
 	}
 });
@@ -173,25 +186,37 @@ $("#login-submit").click(function() {
 		alert("Please enter all information");
 		return false;
 	} else {
-		$.post("http://localhost:3000/api/v1/login", {
-			username: $("#login-username").val(),
-			password: $("#login-password").val()
-		}, function(data) {
-			if (data == "none") {
-				alert("Login failed");
-				return false;
-			} else {
-				//Store "session" stuff for use later on
+		$.ajax({
+			cache: false,
+			url: "http://localhost:3000/api/v1/login/",
+			type: "POST",
+			data: {
+				username: $("#login-username").val(),
+				password: $("#login-password").val()
+			},
+			success: function(data) {
+				hideLoader();
 				
-				localStorage.setItem("branch_login", true);
-				localStorage.setItem("branch_id", data["id"]);
-				localStorage.setItem("branch_username", data["username"]);
-				localStorage.setItem("branch_zip", data["zipcode"]);
-				localStorage.setItem("branch_fullname", data["full_name"]);
-				localStorage.setItem("branch_phone", data["phone"]);
-				localStorage.setItem("branch_email", data["email"]);
-				localStorage.setItem("branch_dob", data["dob"]);
-				$.mobile.changePage("#feed", { transition: "pop" } );
+				if (data == "none") {
+					alert("Login failed");
+					return false;
+				} else {
+					//Store "session" stuff for use later on
+					
+					localStorage.setItem("branch_login", true);
+					localStorage.setItem("branch_id", data["id"]);
+					localStorage.setItem("branch_username", data["username"]);
+					localStorage.setItem("branch_zip", data["zipcode"]);
+					localStorage.setItem("branch_fullname", data["full_name"]);
+					localStorage.setItem("branch_phone", data["phone"]);
+					localStorage.setItem("branch_email", data["email"]);
+					localStorage.setItem("branch_dob", data["dob"]);
+					$.mobile.changePage("#feed", { transition: "pop" } );
+				}
+			},
+			error: function() {
+				hideLoader();
+				alert("There was an error processing your request");
 			}
 		});
 	}
@@ -206,7 +231,7 @@ function joinGroup(id) {
 	
 	$.ajax({
 		cache: false,
-		url: "http://ec2-54-200-118-175.us-west-2.compute.amazonaws.com:3000/api/v1/join/",
+		url: "http://localhost:3000/api/v1/join/",
 		type: "POST",
 		data: {
 			s_id: localStorage.getItem("branch_id"),
@@ -323,3 +348,28 @@ $(document).on("pageshow", "#feed", function() {
 		}
 	});	
 });
+
+//Grab event list stuff
+
+$(document).on("pageshow", "#event-list", function() {
+	showLoader();
+	
+	$.ajax({
+		cache: false,
+		url: "http://localhost:3000/api/v1/layout/event-list",
+		type: "POST",
+		data: {
+			zipcode: localStorage.getItem("branch_zip"),
+			currentTime: getCurrentTime()
+		},
+		success: function(data) {
+			hideLoader();
+			$("#event-list-content").html(data);
+		},
+		error: function() {
+			hideLoader();
+			alert("There was an error processing your request");
+		}
+	});	
+});
+
