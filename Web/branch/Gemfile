@@ -8,7 +8,9 @@ gem 'rack-cors', :require => 'rack/cors'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-gem 'thin'
+# gem 'thin'
+
+gem 'geokit-rails'
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
