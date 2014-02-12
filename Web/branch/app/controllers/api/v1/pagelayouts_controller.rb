@@ -23,11 +23,11 @@ module Api
 			end
 
 			def feed
-				render 'pagelayouts/eventlist'
+				render 'pagelayouts/eventlist', layout: false
 			end
 
 			def event_list
-				render 'pagelayouts/eventlist'
+				render 'pagelayouts/eventlist', layout: false
 			end
 		end
 	end

@@ -1,3 +1,13 @@
+//Set up api endpoints
+
+localStorage.setItem("path_to_create", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/create/");
+localStorage.setItem("path_to_login", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/login/");
+localStorage.setItem("path_to_join", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/join/");
+localStorage.setItem("path_to_orgs", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgs");
+localStorage.setItem("path_to_orgabout", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgabout");
+localStorage.setItem("path_to_feed", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/feed");
+localStorage.setItem("path_to_eventlist", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/event-list");
+
 //Check for login
 
 function checkLogin() {
@@ -125,7 +135,7 @@ $("#signup-button2").click(function() {
 		
 		$.ajax({
 			cache: false,
-			url: "http://localhost:3000/api/v1/create/",
+			url: localStorage.getItem("path_to_create"),
 			type: "POST",
 			data: {
 				full_name:$("#signup-fullname").val(),
@@ -139,7 +149,7 @@ $("#signup-button2").click(function() {
 			},
 			success: function(data) {
 				hideLoader();
-				$.mobile.changePage("#feed", { transition: "pop" } );
+				$.mobile.changePage("#kid-login", { transition: "pop" } );
 			},
 			error: function() {
 				hideLoader();
@@ -188,7 +198,7 @@ $("#login-submit").click(function() {
 	} else {
 		$.ajax({
 			cache: false,
-			url: "http://localhost:3000/api/v1/login/",
+			url: localStorage.getItem("path_to_login"),
 			type: "POST",
 			data: {
 				username: $("#login-username").val(),
@@ -231,7 +241,7 @@ function joinGroup(id) {
 	
 	$.ajax({
 		cache: false,
-		url: "http://localhost:3000/api/v1/join/",
+		url: localStorage.getItem("path_to_join"),
 		type: "POST",
 		data: {
 			s_id: localStorage.getItem("branch_id"),
@@ -267,9 +277,9 @@ function getOrgs(type) {
 	showLoader();
 	
 	if (type == "suggested") {
-		var endpoint = "http://localhost:3000/api/v1/layout/orgs";
+		var endpoint = localStorage.getItem("path_to_orgs");
 	} else if (type == "mine") {
-		var endpoint = "http://localhost:3000/api/v1/layout/orgs";
+		var endpoint = localStorage.getItem("path_to_orgs");
 	}
 	
 	//Get list of organizations either suggested or owned
@@ -306,7 +316,7 @@ $(document).on("pageshow", "#specific-group", function() {
 
 	$.ajax({
 		cache: false,
-		url: "http://localhost:3000/api/v1/layout/orgabout",
+		url: localStorage.getItem("path_to_orgabout"),
 		type: "POST",
 		data: {
 			orgid: localStorage.getItem("group_selected")
@@ -332,7 +342,7 @@ $(document).on("pageshow", "#feed", function() {
 	
 	$.ajax({
 		cache: false,
-		url: "http://localhost:3000/api/v1/layout/feed",
+		url: localStorage.getItem("path_to_feed"),
 		type: "POST",
 		data: {
 			zipcode: localStorage.getItem("branch_zip"),
@@ -356,7 +366,7 @@ $(document).on("pageshow", "#event-list", function() {
 	
 	$.ajax({
 		cache: false,
-		url: "http://localhost:3000/api/v1/layout/event-list",
+		url: localStorage.getItem("path_to_eventlist"),
 		type: "POST",
 		data: {
 			zipcode: localStorage.getItem("branch_zip"),
