@@ -7,7 +7,7 @@ module Api
 				
 				#Get group list between min and max zipcodes
 
-				groups_list = Org.find(:all, :origin => params[:zipcode], :conditions => 'distance<10')
+				groups_list = Org.where(zipcode: min_zip..max_zip)
 
 				if groups_list.first == nil
 					render :text => "none"
