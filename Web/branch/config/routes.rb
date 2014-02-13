@@ -1,5 +1,6 @@
 Branch::Application.routes.draw do
 
+root 'home#index'
 	
 resources :orgs, :students, :events
 
@@ -21,11 +22,16 @@ namespace :api do
 	end
 end
 
+get 'home' => 'home#index'
+
 get 'signup/' => 'signup#index'
 post 'signup/' => 'signup#process_signup'
 
 get 'login/' => 'login#index'
 post 'login/' => 'login#process_login'
+
+get 'logout' => 'login#logout'
+post 'logout' => 'login#process_login'
 
 get 'dashboard/' => 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.

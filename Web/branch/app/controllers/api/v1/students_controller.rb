@@ -40,7 +40,6 @@ module Api
 				student.password = params[:password]
 				student.email = params[:email]
 				student.dob = params[:dob]
-				student.city = params[:city]
 				student.phone = params[:phone]
 				student.full_name = params[:full_name]
 				student.zipcode = params[:zipcode]
