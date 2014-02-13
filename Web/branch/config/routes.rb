@@ -1,6 +1,7 @@
 Branch::Application.routes.draw do
 
 	
+  get "home/e"
 resources :orgs, :students, :events
 
 namespace :api do 
