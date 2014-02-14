@@ -1,7 +1,7 @@
 Branch::Application.routes.draw do
 
 	
-  get "home/e"
+root :to => "home#e"
 resources :orgs, :students, :events
 
 namespace :api do 
@@ -9,8 +9,8 @@ namespace :api do
 		post '/login' => 'login#check_login'
 		post '/layout/orgs/' => 'pagelayouts#get_orgs'
 		post '/layout/orgabout/' => 'pagelayouts#get_org_about'
-    post '/layout/feed/' => 'pagelayouts#feed'
-    post '/layout/event-list/' => 'pagelayouts#event_list'
+		post '/layout/feed/' => 'pagelayouts#feed'
+		post '/layout/event-list/' => 'pagelayouts#event_list'
 
 		post '/index' => 'students#index'
 		post '/student_orgs' => 'students#student_orgs'

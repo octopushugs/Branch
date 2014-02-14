@@ -38,10 +38,8 @@
 <%= yield %>
 
 <div class="footer">
-  <div class="container">
-    ::before
+  <div class="container-fluid">
       <p class= "text-muted">Copyright 2014 Branch</p>
-    ::after
   </div>
 </div>
 </html>
