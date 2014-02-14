@@ -33,13 +33,8 @@ get 'logout' => 'login#logout'
 post 'logout' => 'login#process_login'
 
 get 'dashboard/' => 'dashboard#index'
-<<<<<<< HEAD
 
 get 'about/' => 'static#about'
-
-=======
-post 'dashboard/' => 'events#create'
->>>>>>> 67491d1259aba02853db3b16182e0809a2ab7c7f
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
