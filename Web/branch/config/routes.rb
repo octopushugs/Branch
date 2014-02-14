@@ -1,6 +1,4 @@
 Branch::Application.routes.draw do
-
-root 'home#index'
 	
 root :to => "home#e"
 resources :orgs, :students, :events
