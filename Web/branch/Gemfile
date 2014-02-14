@@ -22,6 +22,8 @@ gem 'font-awesome-rails'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'thin'
+
 gem 'jquery-ui-rails'
 
 # Use CoffeeScript for .js.coffee assets and views
