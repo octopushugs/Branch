@@ -34,6 +34,7 @@ get 'logout' => 'login#logout'
 post 'logout' => 'login#process_login'
 
 get 'dashboard/' => 'dashboard#index'
+post 'dashboard/' => 'events#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

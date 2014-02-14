@@ -11,6 +11,9 @@ class LoginController < ApplicationController
 		else
 			session[:login] = true
 			session[:username] = params[:login_username]
+			session[:org_id] = org_info.id
+			session[:zipcode] = org_info.zipcode
+			session[:user_timezone] = org_info.timezone
 			redirect_to url_for(:controller => 'dashboard')
 		end
 

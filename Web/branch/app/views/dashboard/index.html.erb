@@ -6,7 +6,10 @@
     <% end %>
 	<div class="row">
     	<div class="col-sm-6">
-        	<div class="full-modbox">
+
+            <%= form_tag do %>
+        	
+            <div class="full-modbox">
             	<div class="txt-center large-gray-title">
                 	Add an Event
                 </div>
@@ -15,7 +18,7 @@
                     	<strong>Name of Event</strong>
                     </div>
                     <div class="margin-top-10">
-                    	<input type="text" class="form-control" placeholder="Name of Event" />
+                    	<input name="event_name" type="text" class="form-control" placeholder="Name of Event" />
                     </div>
                 </div>
                 <div class="margin-top-20">
@@ -23,7 +26,7 @@
                     	<strong>Date of Event</strong>
                     </div>
                     <div class="margin-top-10">
-                    	<input id="datepicker" type="text" class="form-control" placeholder="Date" />
+                    	<input name="event_date" id="datepicker" type="text" class="form-control" placeholder="Date" />
                     </div>
                 </div>
                 <div class="margin-top-20">
@@ -34,10 +37,10 @@
                             </div>
                             <div class="row margin-top-10">
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="Ex: 2:00" />
+                                    <input name="event_start" type="text" class="form-control" placeholder="Ex: 2:00" />
                                 </div>
                                 <div class="col-sm-5">
-                                    <select class="form-control">
+                                    <select name="event_start_am" class="form-control">
                                         <option value="am">AM</option>
                                         <option value="pm">PM</option>
                                     </select>
@@ -50,10 +53,10 @@
                             </div>
                             <div class="row margin-top-10">
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="Ex: 2:00" />
+                                    <input name="event_end" type="text" class="form-control" placeholder="Ex: 2:00" />
                                 </div>
                                 <div class="col-sm-5">
-                                    <select class="form-control">
+                                    <select name="event_end_am" class="form-control">
                                         <option value="am">AM</option>
                                         <option value="pm">PM</option>
                                     </select>
@@ -67,7 +70,7 @@
                     	<strong>Address of Event</strong>
                     </div>
                     <div class="margin-top-10">
-                    	<input type="text" class="form-control" placeholder="Address" />
+                    	<input name="event_address" type="text" class="form-control" placeholder="Address" />
                     </div>
                 </div>
                 <div class="margin-top-20">
@@ -75,31 +78,37 @@
                     	<strong>Event Details</strong>
                     </div>
                     <div class="margin-top-10">
-                    	<textarea class="form-control" placeholder="Use this space to write details about your event. Be specific."></textarea>
+                    	<textarea name="event_details" class="form-control" placeholder="Use this space to write details about your event. Be specific."></textarea>
                     </div>
                 </div>
                 <div class="margin-top-20 txt-center">
-                    <a class="btn btn-primary">Add Event</a>
+                    <button id="submit-event-button" class="btn btn-primary" type="submit">Add Event</button>
                 </div>
             </div>
+            
+            <% end %>
+
         </div>
         <div class="col-sm-6 event-list">
         	<div class="large-black-title">
             	My Events
             </div>
+
+            <% @event_list.each do |event| %>
+
             <div class="margin-top-20 white-modbox">
             	<div>
-                	<strong>This is my title</strong>
+                	<strong><%= event.event_name %></strong>
                 </div>
                 <div class="margin-top-5">
-                	This is my description
+                	<%= event.description %>
                 </div>
                 <div class="row margin-top-10">
                 	<div class="col-sm-3">
-                    	<i class="fa fa-calendar"></i> February 14, 2014
+                    	<i class="fa fa-calendar"></i> <%= format_date(event.start_time) %>
                     </div>
                     <div class="col-sm-3">
-                    	<i class="fa fa-clock-o"></i> 2:00 PM
+                    	<i class="fa fa-clock-o"></i> <%= format_time(event.start_time) + " to " + format_time(event.end_time) %>
                     </div>
                     <div class="col-sm-6">
                     	<i class="fa fa-map-marker"></i> 601 Montgomery Street, San Francisco, CA
@@ -110,6 +119,9 @@
             		<a class="btn btn-primary">Delete</a>
             	</div>
             </div>
+
+            <% end %>
+
         </div>
     </div>
 </div>
@@ -118,7 +130,7 @@
 
 <script type="text/javascript">
 $("#datepicker").datepicker({
-	dateFormat: "mm-dd-yy"
+	dateFormat: "dd-mm-yy"
 });
 </script>
 
