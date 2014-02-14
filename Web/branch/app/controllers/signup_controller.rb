@@ -12,7 +12,7 @@ class SignupController < ApplicationController
 		new_org.ppphone = params[:pp_tel]
 		new_org.ppemail = params[:pp_email]
 		new_org.pphandle = params[:pp_handle]
-		new_org.pphandletype = params[:pp_handletype]
+		new_org.pphandletype = params[:org_handletype]
 		new_org.description = params[:org_description]
 		new_org.zipcode = params[:org_zip]
 		new_org.timezone = params[:org][:time_zone]

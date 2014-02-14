@@ -1,0 +1,9 @@
+class HomeController < ApplicationController
+<<<<<<< HEAD
+  def e
+  end
+=======
+	def index
+	end
+>>>>>>> 11060acdabac127db4a671a8199210f0fc0d4454
+end

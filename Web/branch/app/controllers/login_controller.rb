@@ -15,4 +15,10 @@ class LoginController < ApplicationController
 		end
 
 	end
+
+	def logout
+		session[:login] = false
+		@logout = true
+		render 'index'
+	end
 end

@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionController::TestCase
+<<<<<<< HEAD
   test "should get e" do
     get :e
     assert_response :success
   end
+
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> 11060acdabac127db4a671a8199210f0fc0d4454
 end

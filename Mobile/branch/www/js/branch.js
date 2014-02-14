@@ -1,12 +1,24 @@
 //Set up api endpoints
 
-localStorage.setItem("path_to_create", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/create/");
-localStorage.setItem("path_to_login", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/login/");
-localStorage.setItem("path_to_join", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/join/");
-localStorage.setItem("path_to_orgs", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgs");
-localStorage.setItem("path_to_orgabout", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgabout");
-localStorage.setItem("path_to_feed", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/feed");
-localStorage.setItem("path_to_eventlist", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/event-list");
+var endpointFlag = "local";
+
+if (endpointFlag == "live") {
+	localStorage.setItem("path_to_create", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/create/");
+	localStorage.setItem("path_to_login", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/login/");
+	localStorage.setItem("path_to_join", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/join/");
+	localStorage.setItem("path_to_orgs", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgs");
+	localStorage.setItem("path_to_orgabout", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/orgabout");
+	localStorage.setItem("path_to_feed", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/feed");
+	localStorage.setItem("path_to_eventlist", "http://ec2-54-201-60-92.us-west-2.compute.amazonaws.com/api/v1/layout/event-list");
+} else {
+	localStorage.setItem("path_to_create", "http://localhost:3000/api/v1/create/");
+	localStorage.setItem("path_to_login", "http://localhost:3000/api/v1/login/");
+	localStorage.setItem("path_to_join", "http://localhost:3000/api/v1/join/");
+	localStorage.setItem("path_to_orgs", "http://localhost:3000/api/v1/layout/orgs");
+	localStorage.setItem("path_to_orgabout", "http://localhost:3000/api/v1/layout/orgabout");
+	localStorage.setItem("path_to_feed", "http://localhost:3000/api/v1/layout/feed");
+	localStorage.setItem("path_to_eventlist", "http://localhost:3000/api/v1/layout/event-list");
+}
 
 //Check for login
 

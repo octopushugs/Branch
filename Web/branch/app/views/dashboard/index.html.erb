@@ -1,42 +1,9 @@
-<body>
-
-<!--Logged In Header Bar-->
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#branch-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG" style="width:130px; margin-top:-7px;" /></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="branch-navbar">
-      
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boys and Girls Club <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Add Event</a></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!--Logged In Header Bar-->
-
 <div class="container-fluid">
-	<div class="alert alert-danger">
+	<% if @org_info.approved == false %>
+    <div class="alert alert-danger">
     	Your application has not been approved yet. You will not be able to post any events.
     </div>
+    <% end %>
 	<div class="row">
     	<div class="col-sm-6">
         	<div class="full-modbox">
@@ -66,10 +33,10 @@
                                 <strong>Start Time of Event</strong>
                             </div>
                             <div class="row margin-top-10">
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <input type="text" class="form-control" placeholder="Ex: 2:00" />
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <select class="form-control">
                                         <option value="am">AM</option>
                                         <option value="pm">PM</option>
@@ -82,10 +49,10 @@
                                 <strong>End Time of Event</strong>
                             </div>
                             <div class="row margin-top-10">
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <input type="text" class="form-control" placeholder="Ex: 2:00" />
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <select class="form-control">
                                         <option value="am">AM</option>
                                         <option value="pm">PM</option>
@@ -110,6 +77,9 @@
                     <div class="margin-top-10">
                     	<textarea class="form-control" placeholder="Use this space to write details about your event. Be specific."></textarea>
                     </div>
+                </div>
+                <div class="margin-top-20 txt-center">
+                    <a class="btn btn-primary">Add Event</a>
                 </div>
             </div>
         </div>
