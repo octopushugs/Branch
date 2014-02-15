@@ -15,7 +15,7 @@ class SignupController < ApplicationController
 		new_org.pphandletype = params[:org_handletype]
 		new_org.description = params[:org_description]
 		new_org.zipcode = params[:org_zip]
-		new_org.timezone = params[:timezone]
+		new_org.timezone = params[:org][:timezone]
 		new_org.approved = false
 
 		new_org.save
