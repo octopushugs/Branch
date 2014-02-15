@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Branch</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
   <!--Header Bar-->
@@ -78,9 +78,11 @@
 
 <%= yield %>
 
-<div class="footer">
+<!-- Standard Fixed Footer -->
+<div class="footer navbar-fixed-bottom">
   <div class="container-fluid">
       <p class= "text-muted">Copyright 2014 Branch</p>
   </div>
 </div>
+<!-- End Footer -->
 </html>
